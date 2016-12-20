@@ -59,6 +59,47 @@ public class Login implements ActionListener {
 		frmD.setVisible(true);
 		t2.setEchoChar('*');
 
+		// 实现窗口关闭
+		frmD.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+		frmD.setResizable(false);// 固定窗口的大小
 
+		try {
+			stmt = JdbcUtil.getConnection().createStatement();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		Object soruce = e.getSource();
+
+		if (soruce == b1) {
+
+			if (soruce == b1) {
+				String name = t1.getText();
+				String pass = t2.getText();
+				if (!"".equals(name.trim()) && !"".equals(pass.trim())) {
+					if ("123".equals(name.trim()) && "123".equals(pass.trim())) {
+						new MainFunction();
+						frmD.dispose();
+					} else {
+						JOptionPane.showMessageDialog(null, "用户名或密码错误，请重新输入！",
+								"系统提示", JOptionPane.ERROR_MESSAGE);
+					}
+				}else {
+					JOptionPane.showMessageDialog(null, "请输入完整登陆信息！",
+							"系统提示", JOptionPane.ERROR_MESSAGE);}
+			}
+		}
+
+		if (soruce == b2) {
+			System.exit(0);
+		}
+	}
 
 }

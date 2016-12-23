@@ -1,4 +1,11 @@
 import javax.swing.JOptionPane;
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.TextField;
+import java.awt.event.ActionListener;
+
 
 public class PatientFrame implements ActionListener {
 	Statement stmt = null;
@@ -6,8 +13,8 @@ public class PatientFrame implements ActionListener {
 	Frame frm1 = new Frame("医院管理系统");
 
 	// 管理系统病人资料界面
-	// Ａ 病人基本资料
-	Label labe1 = new Label("    Ａ病人基本资料：  （注意：查询，删除请输入病人者姓名）");
+	// 病人基本资料
+	Label labe1 = new Label("   病人基本资料：  （注意：查询，删除请输入病人者姓名）");
 	Button btn1 = new Button("病人编号");
 	Button btn2 = new Button("姓名");
 	Button btn3 = new Button("性别");
@@ -30,3 +37,88 @@ public class PatientFrame implements ActionListener {
 	TextField txf6 = new TextField();
 	TextField txf7 = new TextField();
 	TextField txf8 = new TextField();
+
+	// Ｂ病人就医档案
+	Label labe2 = new Label("   病人就医档案：（注意：查询，删除请输入病人姓名）");
+	Button btnl1 = new Button("病人编号");
+	Button btnl2 = new Button("病人姓名");
+	Button btnl3 = new Button("就医科室");
+	Button btnl4 = new Button("主治医生");
+	Button btnl5 = new Button("病因");
+	Button btnl6 = new Button("处方编号");
+	Button btnl7 = new Button("用药编号");
+
+	Button addB = new Button("Ｂ录入");
+	Button delB = new Button("Ｂ删除");
+	Button qrbB = new Button("Ｂ查询");
+
+	TextField lst11 = new TextField();
+	TextField lst12 = new TextField();
+	TextField lst13 = new TextField();
+	TextField lst14 = new TextField();
+	TextField lst15 = new TextField();
+	TextField lst16 = new TextField();
+	TextField lst17 = new TextField();
+
+	// Ｃ病人收费管理
+	Label labe3 = new Label("   病人收费管理：（注意：查询，删除请输入病人编号）　　单位：元");
+	Button btnk1 = new Button("病人编号");
+	Button btnk2 = new Button("药物费用");
+	Button btnk3 = new Button("挂号费");
+	Button btnk4 = new Button("处置费");
+	Button btnk5 = new Button("化验费");
+
+	Button addC = new Button("Ｃ录入");
+	Button delC = new Button("Ｃ删除");
+	Button qryC = new Button("Ｃ查询");
+
+	TextField lst21 = new TextField();
+	TextField lst22 = new TextField();
+	TextField lst23 = new TextField();
+	TextField lst24 = new TextField();
+	TextField lst25 = new TextField();
+
+
+
+	
+	public void clearFrameA(){
+		 txf1.setText("");
+		 txf2.setText("");
+		 txf3.setText("");
+		 txf4.setText("");
+		 txf5.setText("");
+		 txf6.setText("");
+		 txf7.setText("");
+		 txf8.setText("");
+	}
+	public void clearFrameB(){
+
+		 lst11.setText("");
+		 lst12.setText("");
+		 lst13.setText("");
+		 lst14.setText("");
+		 lst15.setText("");
+		 lst16.setText("");
+		 lst17.setText("");
+	}
+	public void clearFrameC(){
+		 lst21.setText("");
+		 lst22.setText("");
+		 lst23.setText("");
+		 lst24.setText("");
+		 lst25.setText("");
+	}
+
+public PatientFrame() {
+	addA.addActionListener(this);
+	delA.addActionListener(this);
+	// updateA.addActionListener(this);
+	qryA.addActionListener(this);
+	addB.addActionListener(this);
+	delB.addActionListener(this);
+	// updateB.addActionListener(this);
+	qrbB.addActionListener(this);
+	addC.addActionListener(this);
+	delC.addActionListener(this);
+	// udpateC.addActionListener(this);
+	qryC.addActionListener(this);
